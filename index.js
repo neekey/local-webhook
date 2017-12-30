@@ -25,6 +25,8 @@ app.all('/webhook', (req, res) => {
     method: req.method,
     path: req.path,
     query: req.query,
+    headers: req.headers,
+    originalUrl: req.originalUrl,
   };
   console.log(requestData);
   io.emit('received', requestData);
