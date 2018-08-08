@@ -30,7 +30,7 @@ app.all('/webhook', (req, res) => {
   };
   console.log(requestData);
   io.emit('received', requestData);
-  res.sendStatus(200);
+  res.status(200).send(null);
 });
 
 http.listen(PORT, () => console.log(`Listening on ${ PORT }`));
